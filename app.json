@@ -21,7 +21,10 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "config": {
+        "googleMapsApiKey": "AIzaSyBe_t1iII_lLfxXKb3YLf0XR9g637QcCsg"
+      }
     }
   }
 }
