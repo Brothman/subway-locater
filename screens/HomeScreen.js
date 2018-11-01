@@ -7,6 +7,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  SafeAreaView
 } from 'react-native';
 
 import SubwayMap from '../components/SubwayMap.js';
@@ -30,14 +31,15 @@ export default class HomeScreen extends React.Component {
 
   render() {
     return (
-      <ScrollView contentContainerStyle={{ justifyContent: 'space-between', flex: 1, alignItems: 'center' }}>
-        {this.state.locating ? <SubwayMap /> : 
-        <View style={{flex: 1}}>
-          <LocateSubwayButton locate={this.locate} />
-          <LocateSubwayButton locate={this.locate} />
-        </View>
-           }
-      </ScrollView>
+      <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
+        <ScrollView contentContainerStyle={{ justifyContent: 'space-between', flex: 1, alignItems: 'center' }}>
+          {this.state.locating ? <SubwayMap /> : 
+          <View style={{flex: 1}}>
+            <LocateSubwayButton locate={this.locate} />
+          </View>
+            }
+        </ScrollView>
+       </SafeAreaView>
     );
   }
 };

@@ -47,6 +47,7 @@ export default class SubwayMap extends Component {
               coordinate={marker.coordinate}
               title={marker.title}
               description={marker.description}
+              key={marker.id}
           />
       ))
   }
