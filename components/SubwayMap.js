@@ -40,6 +40,16 @@ export default class SubwayMap extends Component {
         ],
     }
   }
+
+  renderMarkers = () => {
+      return this.state.markers.map(marker => (
+          <Marker
+              coordinate={marker.coordinate}
+              title={marker.title}
+              description={marker.description}
+          />
+      ))
+  }
   
   render() {
     return (
@@ -52,14 +62,10 @@ export default class SubwayMap extends Component {
                 latitudeDelta: 0.0922,
                 longitudeDelta: 0.0421,
               }}
-      >
-            {this.state.markers.map(marker => (
-                <Marker
-                    coordinate={marker.coordinate}
-                    title={marker.title}
-                    description={marker.description}
-                />
-            ))}
+       >
+
+           {this.renderMarkers()}
+
       </MapView>
     );
   }
